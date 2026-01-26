@@ -21,13 +21,47 @@
             <a href="./bookStore.php">BookStore</a>
             <a href="./cart.php">Cart</a>
             <a href="./myPage.php">MyPage</a>
+            <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] === 'admin') { ?>
+            <a href="./admin.php">Admin</a>
+            <a href="./userlist.php">UserList</a>
+            <?php } ?>
             </div>
         </div>
+        <?php if(!isset($_SESSION['user'])) { ?>
         <div class="login">
-            <div class="signinBtn"><span class="btn">로그인</span> 해주세요.</div>
-            <div class="signupBtn"><span class="btn">회원가입</span>이 안되셨다면?</div>
+            <div class="signinBtn"><span class="btn" onclick="document.querySelector('.signin').style.display = 'flex'">로그인</span> 해주세요.</div>
+            <div class="signupBtn"><span class="btn" onclick="document.querySelector('.signup').style.display = 'flex'">회원가입</span>이 안되셨다면?</div>
         </div>
+        <?php }  else { ?>
+        <div class="login">
+            <div><span style="font-size: 20px;" class="btn"><?= $_SESSION['user']['name'] ?></span>님, 환영합니다.</div>
+            <a href="logout.php" class="btn" style="font-size: 13px;">로그아웃</a>
+        </div>
+        <?php } ?>
     </div>
     </header>
+    <dialog class="signin">
+        <form action="signin.php" method="POST">
+            <h2>로그인</h2>
+            <div>id : <input type="text" name="id" placeholder="id" required></div>
+            <div>password : <input type="password" name="pw" placeholder="password" required></div>
+            <div class="btnWrap">
+            <button class="btn" type="submit">로그인</button>
+            <button class="btn" type="button" onclick="document.querySelector('.signin').style.display = 'none'">닫기</button>
+        </div>
+    </form>
+    </dialog>
+    <dialog class="signup">
+        <form action="signup.php" method="POST">
+            <h2>회원가입</h2>
+            <div>id : <input type="text" name="id" placeholder="id" required></div>
+            <div>password : <input type="password" name="pw" placeholder="password" pattern="(?=.*[A-Za-z])(?=.*[0-9])(?=.*[~!@#$%^&*]).{6,}" title="영어, 숫자, 특수문자 1개씩 포함 및 6자 이상" required></div>
+            <div>name : <input type="text" name="name" placeholder="name" required></div>
+            <div class="btnWrap">
+            <button class="btn" type="submit">회원가입</button>
+            <button class="btn" type="button" onclick="document.querySelector('.signup').style.display = 'none'">닫기</button>
+        </div>
+    </form>
+    </dialog>
 </body>
 </html>
