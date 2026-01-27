@@ -17,7 +17,7 @@
         
         <div class="hdWrap">
         <div>
-            <a href="./index.php">DGT_LIB</a>
+            <a href="./index.php" style="width: fit-content;">DGT_LIB</a>
             <div>
             <a href="./bookStore.php">BookStore</a>
             <a href="./cart.php">Cart</a>
@@ -64,5 +64,6 @@
     </form>
     </dialog>
     </header>
+    <div style="height:100px;"></div>
 </body>
 </html>
