@@ -12,6 +12,7 @@ $stores = DB::fetchAll("select * from bookstore");
 <main>
   <div class="wrap">
     <h2 class="mainTitle btn">서점 & 관리자 등록 </h2>
+    <div class="adminCon">
     <form action="adminProcess.php" method="POST" enctype="multipart/form-data">
       <h3>서점 등록</h3>
       <div><input type="text" name="storeName" placeholder="서점 이름" required></div>
@@ -25,21 +26,25 @@ $stores = DB::fetchAll("select * from bookstore");
       <div><input type="text" name="name" placeholder="name" required></div>
 
       <button class="btn" style="padding: 2.5px 5px;margin-top:30px;">등록하기</button>
+      </div>
     </form>
     <h2 class="mainTitle btn">등록된 서점 목록</h2>
     <div class="bookstores">
       <?php foreach ($stores as $store) { ?>
         <div class="bookstore-p">
+          <div class="bs-header">
           <div class="bookstore-name"><?= $store['name'] ?></div>
+           <div class="btnWrap">
+             <a href="editStore.php?idx=<?= $store['idx'] ?>" class="btn">수정</a><span style="user-select: none;">/</span>
+              <a href="deleteStore.php?idx=<?= $store['idx'] ?>" class="btn">X</a>
+            </div>
+            </div>
           <div class="imgcover">
             <img src="./img/<?= $store['img'] ?>" alt="" style="object-fit:cover;">
           </div>
           <div class="booktstore-content">
-            <div><span>담당 관리자 :</span><span><?= $store['id'] ?></span></div>
-            <div class="btnWrap">
-              <a href="deleteStore.php?idx=<?= $store['idx'] ?>" class="btn">삭제</a>
-              <a href="editStore.php?idx=<?= $store['idx'] ?>" class="btn">수정</a>
-            </div>
+            <div><span style="color: #bbb;font-size: 14px;">담당 관리자</span></div>
+            <span><?= $store['id'] ?></span>
           </div>
         </div>
       <?php } ?>

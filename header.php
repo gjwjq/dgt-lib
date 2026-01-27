@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
@@ -39,29 +40,29 @@
         </div>
         <?php } ?>
     </div>
-    </header>
     <dialog class="signin">
         <form action="signin.php" method="POST">
+            <section class="closeWrap">
             <h2>로그인</h2>
-            <div>id : <input type="text" name="id" placeholder="id" required></div>
-            <div>password : <input type="password" name="pw" placeholder="password" required></div>
-            <div class="btnWrap">
+            <button class="btn" type="button" onclick="document.querySelector('.signin').style.display = 'none'">X</button>
+            </section>
+            <div><span>id</span> <input type="text" name="id"  required></div>
+            <div><span>password</span> <input type="password" name="pw"  required></div>
             <button class="btn" type="submit">로그인</button>
-            <button class="btn" type="button" onclick="document.querySelector('.signin').style.display = 'none'">닫기</button>
-        </div>
     </form>
     </dialog>
     <dialog class="signup">
         <form action="signup.php" method="POST">
+            <section class="closeWrap">
             <h2>회원가입</h2>
-            <div>id : <input type="text" name="id" placeholder="id" required></div>
-            <div>password : <input type="password" name="pw" placeholder="password" pattern="(?=.*[A-Za-z])(?=.*[0-9])(?=.*[~!@#$%^&*]).{6,}" title="영어, 숫자, 특수문자 1개씩 포함 및 6자 이상" required></div>
-            <div>name : <input type="text" name="name" placeholder="name" required></div>
-            <div class="btnWrap">
-            <button class="btn" type="submit">회원가입</button>
-            <button class="btn" type="button" onclick="document.querySelector('.signup').style.display = 'none'">닫기</button>
-        </div>
+            <button class="btn" type="button" onclick="document.querySelector('.signup').style.display = 'none'">X</button>
+            </section>
+            <div><span>id</span> <input type="text" name="id"  required></div>
+            <div><span>password</span> <input type="password" name="pw"  pattern="(?=.*[A-Za-z])(?=.*[0-9])(?=.*[~!@#$%^&*]).{6,}" title="영어, 숫자, 특수문자 1개씩 포함 및 6자 이상" required></div>
+            <div><span>name</span> <input type="text" name="name"  required></div>
+            <button class="btn" type="submit"><span>회원가입</span></button>
     </form>
     </dialog>
+    </header>
 </body>
 </html>

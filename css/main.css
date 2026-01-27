@@ -13,12 +13,6 @@ header{width: 100%;height: 100px;display: flex;align-items: center;justify-conte
 .signinBtn>span{font-size: 19px;}
 .signupBtn{margin-top: 5px;font-size: 12px;&>span{font-size: 15px;}}
 
-dialog{position: fixed;width: 100%;height: 100%;top: 0;left: 0;display: flex;justify-content: center;align-items: center;display: none;z-index: 100;background-color: rgba(0, 0, 0, 0.34);}
-dialog form{background-color: #0f172a;color: #becfe7;padding: 20px 40px;border-radius: 20px;overflow: hidden;display: flex;flex-direction: column;gap: 10px;}
-dialog form>div{display: flex;justify-content: space-between;gap: 20px;}
-.btnWrap{margin-top: 20px;}
-dialog form input{border: none;padding: 0 10px;background-color: #becfe7;color: #0f172a;}
-dialog form button{background-color: #becfe7; color: #0f172a;padding: 0 10px;}
 
 body{width: 100%;height: 100%; background-color: #d7e8ff;}
 main{color: #0f172a; width: 100%;height: 100%;display: flex;flex-direction: column;align-items: center;padding: 100px 0;}
