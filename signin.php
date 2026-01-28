@@ -13,7 +13,7 @@
     $store = DB::fetch("select * from bookstore where id = '{$user['id']}'");
     if($store) {
       $_SESSION['myIdx'] = $store['idx'];
-      alert('서점 관리자님 환영합니다.');
+      alert("서점 관리자님 환영합니다.");
       move('manageBook.php');
     } else {
     alert('로그인 되었습니다.');

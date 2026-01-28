@@ -34,8 +34,8 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
           <input type="hidden" name="mode" value="insert">
           <input type="hidden" name="storeIdx" value="<?= $idx ?>">
 
-          <input type="text" name="title" placeholder="책 제목" required>
-          <input type="text" name="author" placeholder="책 저자" required>
+          <input type="text" name="title" placeholder="책 제목" required maxlength="27">
+          <input type="text" name="author" placeholder="책 저자" required maxlength="26">
           <textarea name="content" placeholder="책 설명"></textarea>
           <input type="number" name="count" placeholder="수량" min="1" required>
           <input type="file" name="img" required>
@@ -51,7 +51,18 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
          <div class="books">
           <?php foreach($myBooks as $book) { ?>
             <div class="book">
-              <div class="imgcover"></div>
+              <div class="bookedit"><a href="bookEdit.php?idx=<?= $book['idx'] ?>" class="btn">수정</a></div>
+              <div class="booktitle">
+                <span>제목</span>
+                <h2><?= $book['title'] ?></h2>
+            </div>
+              <div class="bookimgcover">
+                <img src="./img/<?= $book['img'] ?>" alt="">
+              </div>
+              <div class="bookContent">
+                <div style="display: flex;align-items: center; gap: 5px;"><span style="font-size: 13px;color: #575757aa;">저자 </span><div class="author"><?= $book['author'] ?></div></div>
+                <div><span style="font-size: 13px;color: #575757aa;">수량 </span><span><?= $book['count'] ?></span></div>
+              </div>
             </div>
           <?php } ?>
          </div>

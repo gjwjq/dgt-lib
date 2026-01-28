@@ -11,7 +11,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['id'] !== 'admin') {
 <link rel="stylesheet" href="./css/admin.css">
 <main>
   <div class="wrap">
-    <h2 class="mainTitle btn">서점 & 관리자 등록 </h2>
+    <div class="mainTitle">
+      <h2>서점 & 관리자 등록</h2>
+      <p>서점을 생성하며 서점마다 관리자 계정을 생성 할 수 있습니다.</p>
+    </div>
+    
     <div class="adminCon">
     <form action="adminProcess.php" method="POST" enctype="multipart/form-data">
       <h3>서점 등록</h3>
@@ -26,7 +30,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['id'] !== 'admin') {
       <button class="btn" style="padding: 2.5px 5px;margin-top:30px;">등록하기</button>
       </div>
     </form>
-    <h2 class="mainTitle btn">등록된 서점 목록</h2>
+    <div class="mainTitle">
+      <h2>등록된 서점 목록</h2>
+      <p>등록된 서점과 관리자를 한눈에 볼 수 있습니다.</p>
+    </div>
     <div class="bookstores">
       <?php foreach ($stores as $store) { ?>
         <div class="bookstore-p">
