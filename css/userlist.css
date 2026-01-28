@@ -1,5 +1,5 @@
-table{border-collapse: collapse; justify-self: center;align-self: center;}
+table{border-collapse: collapse; justify-self: center;align-self: center;border-radius: 10px;overflow: hidden;}
 tr{display: flex;}
-th, td{width: 300px;min-height: 50px;display: flex;justify-content: center;align-items: center;}
-th{background-color: #0f172a;color: #fff;font-size: 20px;padding: 20px;}
-td{background-color: #fff;border-bottom: 2px solid #eee;padding: 10px;word-break: break-all;}
+th, td{width: 400px;min-height: 40px;display: flex;justify-content: center;align-items: center;}
+th{background-color: #333; color: #eee; font-size: 18px;padding: 20px;font-weight: normal;}
+td{background-color: #fff;border-bottom: 1.5px solid #eee;padding: 10px;word-break: break-all;}

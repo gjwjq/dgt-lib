@@ -22,6 +22,9 @@
             <a href="./bookStore.php">BookStore</a>
             <a href="./cart.php">Cart</a>
             <a href="./myPage.php">MyPage</a>
+            <?php if(isset($_SESSION['myIdx'])) { ?>
+                <a href="./manageBook.php">BookManagement</a>
+            <?php } ?>
             <?php if(isset($_SESSION['user']) && $_SESSION['user']['id'] === 'admin') { ?>
             <a href="./admin.php">Admin</a>
             <a href="./userlist.php">UserList</a>

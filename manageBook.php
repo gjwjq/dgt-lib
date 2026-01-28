@@ -1,0 +1,46 @@
+<?php
+require_once 'header.php';
+
+if (!isset($_SESSION['myIdx'])) {
+  back('관리자만 접근 가능합니다.');
+  exit;
+}
+
+$idx = $_SESSION['myIdx'];
+$myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <div class="wrap">
+      <div class="mainTitle">
+        <h2>도서 관리</h2>
+        <p>서점에 책 들을 추가 및 삭제 할 수 있습니다.</p>
+      </div>
+      <div class="adminCon">
+        <form action="bookProcess.php" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="mode" value="insert">
+          <input type="hidden" name="storeIdx" value="<?= $idx ?>">
+
+          <input type="text" name="title" placeholder="책 제목" required>
+          <textarea name="content" placeholder="책 설명"></textarea>
+          <input type="number" name="count" placeholder="수량" min="1" required>
+          <input type="file" name="img" required>
+
+          <button type="submit">책 등록하기</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

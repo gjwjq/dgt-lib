@@ -37,7 +37,6 @@
 
     $imgSql = ", img = '$filename'";
   }
-  // [중요] WHERE idx = $idx 가 있어야 딱 그 서점만 바뀜
     $sql = "UPDATE bookstore SET name = '$storeName' $imgSql WHERE idx = $idx";
     
     DB::exec($sql);
