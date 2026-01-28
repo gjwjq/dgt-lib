@@ -1,0 +1,1 @@
+.books{width: 1400px;display: grid;grid-template-columns: repeat(5, 1fr);}

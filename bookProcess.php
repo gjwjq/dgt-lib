@@ -15,7 +15,7 @@
 
     DB::exec("
       insert into book (storeIdx,title,content,img,count)
-      values ('$storeidx','$title','$content','$fileName','$count',)
+      values ('$storeIdx','$title','$content','$fileName','$count')
     ");
 
     alert('책 등록 완료');
