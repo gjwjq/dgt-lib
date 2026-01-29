@@ -7,6 +7,9 @@ if (!isset($_SESSION['myIdx'])) {
 }
 
 $idx = $_SESSION['myIdx'];
+
+$store = DB::fetch("select * from bookstore where idx = '$idx'");
+
 $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
 ?>
 
@@ -24,8 +27,9 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
 <body>
   <main>
     <div class="wrap">
+      <div class="wrap">
       <div class="mainTitle">
-        <h2>도서 관리</h2>
+        <h2>도서 관리 - <?= $store['name'] ?></h2>
         <p>서점에 책 들을 추가 및 삭제 할 수 있습니다.</p>
       </div>
       <div class="adminCon">
@@ -43,7 +47,8 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
           <button type="submit" class="btn">책 등록하기</button>
         </form>
       </div>
-      <div class="container">
+      </div>
+      <div class="wrap">
         <div class="mainTitle">
           <h2>도서 목록</h2>
           <p>서점에 추가 된 책들의 목록입니다.</p>
@@ -61,7 +66,7 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
               </div>
               <div class="bookContent">
                 <div style="display: flex;align-items: center; gap: 5px;"><span style="font-size: 13px;color: #575757aa;">저자 </span><div class="author"><?= $book['author'] ?></div></div>
-                <div><span style="font-size: 13px;color: #575757aa;">수량 </span><span><?= $book['count'] ?></span></div>
+                <div><span style="font-size: 13px;color: #575757aa;">수량 </span><span><?= $book['count'] ?></span>권</div>
               </div>
             </div>
           <?php } ?>
