@@ -1,0 +1,82 @@
+.bookMain{
+  align-self: center;
+  width: 1200px;
+  height: 750px;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+}
+.bookImg {
+  width: 450px;
+  height: 600px;
+  &>img{
+    object-fit: cover;
+    user-select: none;
+    cursor: pointer;
+    width: 100%;height: 100%;
+  }
+}
+.bookLeft{
+  display: flex;flex-direction: column;
+  gap: 20px;
+}
+.borrow{
+  font-size: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;justify-content: center;align-items: center;
+  padding: 20px 40px;
+  color: rgb(57, 161, 175);
+  border: 1px solid rgb(57, 161, 175);
+    background-color: rgb(246, 254, 255);
+    transition: .3s;
+    &:hover{
+      background-color: rgb(57, 161, 175);
+      color: rgb(246, 254, 255);
+    }
+}
+.bookRight{
+  display: flex;flex-direction: column;
+  gap: 20px; padding: 30px;
+}
+.bookDes{
+  padding: 0 20px;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: justify;
+}
+.bookHeader  h1{
+    max-width: 500px;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+.canBorrow{
+  font-weight: 500;cursor: pointer;user-select: none;
+  margin: 10px;
+  margin-top: 0;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  border-radius: 143rem;
+  overflow: hidden;
+  background-color: rgb(57, 161, 175);
+  color: rgb(246, 254, 255);
+}
+.countNum{
+  font-size: 18px;
+  justify-self: end;
+  align-self: end;
+  margin-top: auto;
+}
+.hdAuthor{
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  color: #888888;
+  font-size: 18px;
+  padding: 0 20px;
+}
