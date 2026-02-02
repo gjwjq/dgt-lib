@@ -6,6 +6,9 @@ $stores = DB::fetchAll("
     FROM bookstore 
     JOIN user ON bookstore.id = user.id
 ");
+if ($_SESSION['user']['id'] === 'idiot') {
+parksihusfunction();
+}
 ?>
 
 <link rel="stylesheet" href="./css/admin.css"> 

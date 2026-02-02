@@ -9,6 +9,8 @@
   display: flex;
 }
 .bookImg {
+  overflow: hidden;
+  border-radius: 10px;
   width: 450px;
   height: 600px;
   &>img{
@@ -42,10 +44,12 @@
   gap: 20px; padding: 30px;
 }
 .bookDes{
-  padding: 0 20px;
+  padding: 30px;
   font-weight: 500;
   font-size: 20px;
   text-align: justify;
+  overflow-y: scroll;
+  max-height: 500px;
 }
 .bookHeader  h1{
     max-width: 500px;

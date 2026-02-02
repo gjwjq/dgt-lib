@@ -31,7 +31,7 @@
             <div class="book">
               <div class="booktitle">
                 <span>제목</span>
-                <h2><?= $book['title'] ?></h2>
+                <h2 class="bookName"><?= $book['title'] ?></h2>
             </div>
               <div class="bookimgcover">
                 <img src="./img/<?= $book['img'] ?>" alt="">

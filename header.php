@@ -20,8 +20,9 @@
             <a href="./index.php" style="width: fit-content;">DGT_LIB</a>
             <div>
             <a href="./bookStore.php">BookStore</a>
-            <a href="./cart.php">Cart</a>
+            <?php if(isset($_SESSION['user']) && !isset($_SESSION['myIdx']) && $_SESSION['user']['id'] !== 'admin') { ?>
             <a href="./myPage.php">MyPage</a>
+            <?php } ?>
             <?php if(isset($_SESSION['myIdx'])) { ?>
                 <a href="./manageBook.php">BookManagement</a>
             <?php } ?>

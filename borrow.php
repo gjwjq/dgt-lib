@@ -35,7 +35,7 @@ if ($checkRent) {
 
 $returnDate = date("Y-m-d H:i:s", strtotime("+7 days"));
 $res1 = DB::exec("INSERT INTO rent (userId, bookIdx, rentDate, returnDate, status) VALUES (?, ?, NOW(), ?, '대여중')", [
-    $userId, $bookIdx, $returnDate
+    $userId, $bookIdx, $returnDate 
 ]);
 
 $res2 = DB::exec("UPDATE book SET count = count - 1 WHERE idx = ?", [$bookIdx]);

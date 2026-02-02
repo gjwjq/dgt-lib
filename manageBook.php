@@ -54,7 +54,7 @@ $myBooks = DB::fetchAll("select * from book where storeIdx = '$idx'");
               <div class="bookedit"><a href="bookEdit.php?idx=<?= $book['idx'] ?>" class="btn">수정</a></div>
               <div class="booktitle">
                 <span>제목</span>
-                <h2><?= $book['title'] ?></h2>
+                <h2 class="bookName"><?= $book['title'] ?></h2>
             </div>
               <div class="bookimgcover">
                 <img src="./img/<?= $book['img'] ?>" alt="">

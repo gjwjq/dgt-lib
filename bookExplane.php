@@ -27,7 +27,7 @@
         <div class="bookImg">
           <img src="./img/<?= $book['img'] ?>" alt="" draggable="false">
         </div>
-        <a href="borrow.php" class="borrow btn">대여하기</a>
+        <a href="borrow.php?bookIdx=<?= $book['idx'] ?>" class="borrow btn">대여하기</a>
       </div>
         <div class="bookRight">
            <div class="bookHeader">
