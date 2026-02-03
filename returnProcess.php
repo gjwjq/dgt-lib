@@ -10,13 +10,12 @@
     exit; 
   }
 
-  $res1 = DB::exec("update rent set status = '반납완료' where idx = '$rentIdx'");
-  $res2 = DB::exec("update book set count = count + 1 where idx = '$bookIdx'");
+  $res1 = DB::exec("UPDATE rent SET status = '반납완료' WHERE idx = $rentIdx");
+  $res2 = DB::exec("UPDATE book SET count = count + 1 WHERE idx = $bookIdx");
 
-
-  if($res1) {
+  if($res1 !== false && $res2 !== false) {
     alert('반납이 완료되었습니다.');
     move('myPage.php');
   } else {
-    back('반납에 문제가 생겼습니다.');
+    back('DB 업데이트 중 오류가 발생했습니다.');
   }
