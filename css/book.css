@@ -27,7 +27,7 @@
 }
 .booktitle{display: flex;flex-direction: column;align-items: center;
 &>span{font-size: 14px;color: #747474aa;}}
-.bookimgcover{width: 100px;height: 130px;overflow: hidden;}
+.bookimgcover{width: 100px;height: 130px;overflow: hidden; >img{object-fit: cover; width: 100%;height: 100%;}}
 
 .author{
   word-break: break-all;
